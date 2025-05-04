@@ -6,7 +6,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 # Add the parent directory to sys.path
 sys.path.append(parent_dir)
-print('added to sys.path')
+print('added to sys.path', parent_dir)
 
 
 from bin.spotting_challenge_commands import \
