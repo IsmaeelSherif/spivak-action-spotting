@@ -12,7 +12,7 @@ PYTHON_REQUIRES = ">=3.6"
 INSTALL_REQUIRES = [
     "numpy>=1.18.5,<1.23.0",
     "scipy>=1.4.1,<1.8.0",
-    "scikit-learn>=0.24.2",
+    "scikit-learn>=0.24.2,<1.1.0",
     "pandas>=1.1.5,<1.4.0",
     "Pillow>=8.4.0,<9.1.0",
     "opencv-python>=4.5.4.58,<4.8.0",
