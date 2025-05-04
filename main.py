@@ -1,6 +1,11 @@
 import os
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
+# Get the directory containing the current script (main.py)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# Get the parent directory (spivak-action-spotting)
+parent_dir = os.path.dirname(current_dir)
+# Add the parent directory to sys.path
+sys.path.append(parent_dir)
 print('added to sys.path')
 
 
