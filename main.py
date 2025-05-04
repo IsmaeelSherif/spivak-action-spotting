@@ -1,3 +1,9 @@
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__))))
+print('added to sys.path')
+
+
 from bin.spotting_challenge_commands import \
     commands_spotting_challenge, print_commands, BAIDU_TWO_FEATURE_NAME, \
     BAIDU_TWO_FEATURES_DIR, RUN_NAME_ZOO
