@@ -56,9 +56,11 @@ def test(args: SharedArgs) -> None:
     # Load the dataset
     split = args.test_split
     try:
-        print("args.feature_name", args.feature_name)
+        print("1 args.feature_name", args.feature_name)
     except:
-        print('args.feature_name', 'None')
+        print('1 args.feature_name', 'None')
+
+    args.feature_name = "ResNET_PCA512"
     dataset = create_dataset(args, split, label_maps)
     results_dir = Path(args.results_dir)
     results_dir.mkdir(exist_ok=True)
