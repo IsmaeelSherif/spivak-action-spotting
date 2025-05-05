@@ -55,6 +55,10 @@ def test(args: SharedArgs) -> None:
     label_maps = create_label_maps(args)
     # Load the dataset
     split = args.test_split
+    try:
+        print("args.feature_name", args.feature_name)
+    except:
+        print('args.feature_name', 'None')
     dataset = create_dataset(args, split, label_maps)
     results_dir = Path(args.results_dir)
     results_dir.mkdir(exist_ok=True)

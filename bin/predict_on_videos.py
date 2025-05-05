@@ -77,7 +77,7 @@ def main() -> None:
     # Don't run evaluation, just prediction.
     shared_args.evaluate = 0
     # Run prediction code on the generated features.
-    print("args.feature_name", args.feature_name)
+    
     test(shared_args)
 
 

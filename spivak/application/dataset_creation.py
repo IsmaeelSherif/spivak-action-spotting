@@ -205,6 +205,10 @@ def _tasks_from_custom_dataset_type(dataset_type: str) -> List[Task]:
 
 def _create_split_paths_provider(
         args: SharedArgs, tasks: List[Task]) -> SplitPathsProvider:
+    try:
+        print("args.feature_name", args.feature_name)
+    except:
+        print('args.feature_name', 'None')
     features_dir = dir_str_to_path(args.features_dir)
     features_paths = create_features_paths(features_dir, args.feature_name)
     labels_dir_dict = dict()
