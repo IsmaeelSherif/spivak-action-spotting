@@ -45,6 +45,11 @@ class SplitPathsProvider:
 
     def provide(self, split_key: str):
         split = self._splits[split_key]
+        print('provide_split', split, split_key)
+
+        for features_path in self._features_paths:
+            print("features_path", features_path, 'name_from_path(features_path)', name_from_path(features_path))
+
         split_features_paths = [
             features_path for features_path in self._features_paths
             if name_from_path(features_path) in split]
