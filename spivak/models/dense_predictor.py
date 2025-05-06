@@ -170,8 +170,11 @@ class DensePredictor(PredictorInterface):
             video_features)
         num_frames = video_features.shape[0]
         head_outputs_shape = (
-            num_frames, predictor_head.num_classes,
+            num_frames, 17,
             predictor_head.output_dimension)
+        # head_outputs_shape = (
+        #     num_frames, predictor_head.num_classes,
+        #     predictor_head.output_dimension)
         head_outputs = np.zeros(head_outputs_shape)
 
         print('4 head_outputs_shape', head_outputs_shape)
