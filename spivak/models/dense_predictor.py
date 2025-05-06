@@ -173,6 +173,10 @@ class DensePredictor(PredictorInterface):
             num_frames, predictor_head.num_classes,
             predictor_head.output_dimension)
         head_outputs = np.zeros(head_outputs_shape)
+
+        print('4 head_outputs_shape', head_outputs_shape)
+        print('4 head_chunk_outputs', np.array(head_chunk_outputs).shape)
+
         result_chunk_iterator.accumulate_chunk_outputs(
             head_outputs, head_chunk_outputs)
         return np.squeeze(head_outputs, axis=2)
