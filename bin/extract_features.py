@@ -35,7 +35,7 @@ def main() -> None:
     args = _get_command_line_arguments()
     logging.getLogger().setLevel(logging.DEBUG)
     input_dir = Path(args[Args.INPUT_VIDEOS_DIR])
-    if not input_dir.is_dir():
+    if input_dir.is_dir():
         raise ValueError(f"Input directory failed is_dir(): {input_dir}")
     features_dir = Path(args[Args.FEATURES_DIR])
     features_dir.mkdir(parents=True, exist_ok=True)
