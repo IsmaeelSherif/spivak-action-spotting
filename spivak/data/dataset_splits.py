@@ -45,6 +45,7 @@ class SplitPathsProvider:
 
     def provide(self, split_key: str):
         split = self._splits[split_key]
+        print('self._splits', self._splits)
         print('provide_split', split, split_key)
 
         for features_path in self._features_paths:
