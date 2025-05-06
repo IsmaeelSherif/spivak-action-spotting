@@ -5,7 +5,7 @@
 from pathlib import Path
 from typing import List
 
-VIDEO_EXTENSIONS = {".mp4", ".avi", ".mkv"}
+VIDEO_EXTENSIONS = {".mp4", ".avi", ".mkv", ".mov"}
 
 
 def list_video_paths(input_videos_dir: Path) -> List[Path]:

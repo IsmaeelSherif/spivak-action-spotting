@@ -7,13 +7,12 @@
 import sys
 import os
 
-# Get the absolute path to the parent directory of 'eztorch'
-eztorch_parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 # Add it to the Python path if it's not already there
-if eztorch_parent_dir not in sys.path:
+if parent_dir not in sys.path:
     print('added to path')
-    sys.path.insert(0, eztorch_parent_dir)
+    sys.path.insert(0, parent_dir)
 
 import logging
 

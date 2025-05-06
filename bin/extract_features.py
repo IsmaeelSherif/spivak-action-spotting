@@ -4,6 +4,16 @@
 # Licensed under the Apache License, Version 2.0.
 # See the accompanying LICENSE file for terms.
 
+import sys
+import os
+
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+# Add it to the Python path if it's not already there
+if parent_dir not in sys.path:
+    print('added to path')
+    sys.path.insert(0, parent_dir)
+
 import argparse
 import logging
 from pathlib import Path
@@ -31,7 +41,7 @@ def main() -> None:
     features_dir.mkdir(parents=True, exist_ok=True)
     feature_extractor = create_feature_extractor(
         args[Args.FEATURES], Path(args[Args.FEATURES_MODELS_DIR]))
-    video_paths = list_video_paths(input_dir)
+    video_paths = [input_dir]
     extract_features_from_videos(video_paths, features_dir, feature_extractor)
 
 
