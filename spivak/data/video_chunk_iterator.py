@@ -108,5 +108,6 @@ class VideoChunkIterator:
         result_end = self._result_end
         output_start = self._output_start
         output_end = self._output_end
+        print('accumulated_output', accumulated_output.shape, 'output_chunk', output_chunk.shape)
         accumulated_output[result_start:result_end] = \
             output_chunk[output_start:output_end]
