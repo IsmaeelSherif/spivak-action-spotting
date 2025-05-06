@@ -106,8 +106,16 @@ class DensePredictor(PredictorInterface):
     def predict_video_base(self, video_features: np.ndarray) -> VideoOutputs:
         input_chunk_batch, valid_chunk_sizes = self._prepare_input_batch(
             video_features)
+        
+        try:
+            print('input_chunk_batch', input_chunk_batch.shape)
+        except:
+            print('input_chunk_batch is not NDArray')
         all_head_chunk_outputs = self._predict(
             input_chunk_batch, valid_chunk_sizes)
+        
+        print('all_head_chunk_outputs', np.array(all_head_chunk_outputs).shape)
+
         return self._accumulate_all_head_chunk_outputs(
             all_head_chunk_outputs, video_features)
 
