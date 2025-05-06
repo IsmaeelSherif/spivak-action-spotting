@@ -45,6 +45,13 @@ class Args:
 
 def main() -> None:
     args = _get_command_line_arguments()
+
+    try:
+        print("0 args.feature_name", args.feature_name)
+    except:
+        print('0 args.feature_name', 'None')
+
+
     logging.getLogger().setLevel(logging.DEBUG)
     input_dir = Path(args[Args.INPUT_VIDEOS_DIR])
     if not input_dir.is_dir():
