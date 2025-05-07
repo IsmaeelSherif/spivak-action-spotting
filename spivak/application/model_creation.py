@@ -1040,5 +1040,6 @@ def _update_keras_custom_objects(heads: List[PredictorHeadInterface]) -> None:
     # Add the loss functions to custom_objects so that Keras can access them
     # when loading the models from disk.
     losses_dict = {head.loss_name: head.loss for head in heads}
+    print('losses_dict', losses_dict)
     get_custom_objects().update(losses_dict)
     get_custom_objects().update({"SAMModel": SAMModel})
