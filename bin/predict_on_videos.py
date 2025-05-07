@@ -63,7 +63,7 @@ def main() -> None:
     results_dir.mkdir(parents=True, exist_ok=True)
     feature_extractor = create_feature_extractor(
         args[Args.FEATURES], Path(args[Args.FEATURES_MODELS_DIR]))
-    video_paths = input_dir
+    video_paths = [input_dir]
     extract_features_from_videos(video_paths, features_dir, feature_extractor)
     # Set up prediction run by loading existing model arguments and
     # overwriting them for the current run.
