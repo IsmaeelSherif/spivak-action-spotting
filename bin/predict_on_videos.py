@@ -54,15 +54,16 @@ def main() -> None:
 
     logging.getLogger().setLevel(logging.DEBUG)
     input_dir = Path(args[Args.INPUT_VIDEOS_DIR])
-    if not input_dir.is_dir():
+    if input_dir.is_dir():
         raise ValueError(f"Input directory failed is_dir(): {input_dir}")
+    
     features_dir = Path(args[Args.FEATURES_DIR])
     results_dir = Path(args[Args.RESULTS_DIR])
     features_dir.mkdir(parents=True, exist_ok=True)
     results_dir.mkdir(parents=True, exist_ok=True)
     feature_extractor = create_feature_extractor(
         args[Args.FEATURES], Path(args[Args.FEATURES_MODELS_DIR]))
-    video_paths = list_video_paths(input_dir)
+    video_paths = input_dir
     extract_features_from_videos(video_paths, features_dir, feature_extractor)
     # Set up prediction run by loading existing model arguments and
     # overwriting them for the current run.
